@@ -1,75 +1,293 @@
-# React + TypeScript + Vite
+# AmazonScale Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+# 🛒 AmazonScale Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Enterprise-grade Frontend for the AmazonScale E-Commerce Platform**
 
-## React Compiler
+Built with modern frontend engineering practices using **React**, **TypeScript**, and **Vite**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+🚧 **Project Status:** Active Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+</div>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 📖 Overview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+AmazonScale Frontend is the client-side application for the AmazonScale E-Commerce Platform.
+
+The objective of this project is not only to build a production-ready frontend but also to deeply understand modern frontend technologies by implementing them from scratch using industry-standard engineering practices.
+
+This project complements the **AmazonScale Backend**, which is built using Spring Boot.
+
+---
+
+# 🎯 Learning Objectives
+
+This repository is being developed to learn and master:
+
+- React
+- TypeScript
+- Frontend Architecture
+- Component-Based Development
+- Modern JavaScript (ES6+)
+- REST API Integration
+- Responsive UI Development
+- Frontend Performance
+- Testing
+- CI/CD
+- Docker
+- Production Deployment
+
+Every feature will be implemented only after understanding the underlying concepts and architecture.
+
+---
+
+# 🚀 Current Progress
+
+## Phase 0 — Project Foundation
+
+- ✅ GitHub Repository Created
+- ✅ Project Planning
+- ✅ Initial Documentation
+- ✅ Git Workflow Setup
+
+---
+
+## Phase 1 — Project Bootstrap
+
+Completed
+
+- ✅ React
+- ✅ TypeScript
+- ✅ Vite
+- ✅ ESLint
+- ✅ Project Bootstrapping
+- ✅ Initial Project Structure
+
+---
+
+## Upcoming Phases
+
+- ⏳ Components & JSX
+- ⏳ React Hooks
+- ⏳ Routing
+- ⏳ Tailwind CSS
+- ⏳ API Integration
+- ⏳ Authentication
+- ⏳ State Management
+- ⏳ Testing
+- ⏳ Docker
+- ⏳ CI/CD
+- ⏳ Production Deployment
+
+---
+
+# 🛠 Current Tech Stack
+
+## Framework
+
+- React 19
+
+## Language
+
+- TypeScript
+
+## Build Tool
+
+- Vite
+
+## Linting
+
+- ESLint
+
+---
+
+# 📦 Planned Tech Stack
+
+The following technologies will be integrated during development:
+
+### Styling
+
+- Tailwind CSS
+
+### Routing
+
+- React Router
+
+### HTTP Client
+
+- Axios
+
+### Server State
+
+- TanStack Query
+
+### Forms
+
+- React Hook Form
+
+### Validation
+
+- Zod
+
+### UI Components
+
+- shadcn/ui
+
+### Icons
+
+- Lucide React
+
+### Notifications
+
+- Sonner
+
+### Testing
+
+- Vitest
+- React Testing Library
+
+### DevOps
+
+- Docker
+- GitHub Actions
+
+### Deployment
+
+- Vercel
+
+---
+
+# 🏗 Planned Project Structure
 
 ```
+src/
+│
+├── api/
+├── assets/
+├── components/
+├── config/
+├── constants/
+├── features/
+├── hooks/
+├── layouts/
+├── pages/
+├── routes/
+├── services/
+├── store/
+├── styles/
+├── types/
+└── utils/
+```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This structure will evolve as the project grows.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 🔗 Backend Integration
+
+The frontend will consume REST APIs exposed by the AmazonScale Backend.
+
+Backend Repository:
+
+**AmazonScale Backend**
+
+https://github.com/Amitgupta0001/amazon-scale-backend
+
+---
+
+# ⚙️ Getting Started
+
+## Prerequisites
+
+- Node.js
+- npm
+
+---
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/Amitgupta0001/amazon-scale-frontend.git
+```
+
+Navigate into the project
+
+```bash
+cd amazon-scale-frontend
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 📁 Current Project Structure
 
 ```
+amazon-scale-frontend/
+│
+├── docs/
+├── public/
+├── src/
+│
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+---
+
+# 🧠 Development Philosophy
+
+This project follows an engineering-first approach.
+
+Every module is developed using the following workflow:
+
+1. Learn the concept
+2. Understand the architecture
+3. Design the solution
+4. Implement the feature
+5. Review the code
+6. Test the implementation
+7. Commit changes
+8. Update documentation
+
+The goal is to understand *why* each technology is used, not just *how* to use it.
+
+---
+
+# 📌 Repository Status
+
+Current Version
+
+```
+v0.1.0
+```
+
+Status
+
+```
+Phase 1 Complete
+```
+

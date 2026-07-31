@@ -1,98 +1,24 @@
-# =========================
-# Dependencies
-# =========================
-node_modules/
-
-# =========================
-# Build Output
-# =========================
-dist/
-build/
-
-# =========================
 # Logs
-# =========================
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
-# =========================
-# Environment Variables
-# =========================
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+node_modules
+dist
+dist-ssr
+*.local
 
-# =========================
-# IDE - IntelliJ IDEA
-# =========================
-.idea/
-*.iml
-
-# =========================
-# VS Code
-# =========================
-.vscode/
-
-# =========================
-# OS Files
-# =========================
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-
-# =========================
-# Vite
-# =========================
-vite.svg
-
-# =========================
-# Coverage
-# =========================
-coverage/
-
-# =========================
-# Testing
-# =========================
-playwright-report/
-test-results/
-
-# =========================
-# Cache
-# =========================
-.cache/
-.parcel-cache/
-.eslintcache
-
-# =========================
-# TypeScript
-# =========================
-*.tsbuildinfo
-
-# =========================
-# Temporary Files
-# =========================
-tmp/
-temp/
-
-# =========================
-# Package Managers
-# =========================
-.pnpm-store/
-.npm/
-.yarn/
-
-# =========================
-# Docker
-# =========================
-docker-compose.override.yml
-
-# =========================
-# Miscellaneous
-# =========================
-*.swp
-*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

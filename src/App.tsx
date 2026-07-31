@@ -1,15 +1,15 @@
-import Header from "./components/Header";
+import Header from "./components/layout/Header";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 
-function App(){
-  return (
-      <>
-        <Header />
-        <Hero />
-        <Footer />
-      </>
-  );
+function App() {
+    return (
+        <>
+            <Header />
+            <Hero />
+            <Footer />
+        </>
+    );
 }
 
 export default App;

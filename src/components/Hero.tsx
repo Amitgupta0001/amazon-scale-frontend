@@ -1,12 +1,21 @@
 function Hero() {
-    return(
+    return (
         <section className="hero">
-            <h2>
-                Enterprise E-Commerce Platform
-            </h2>
-            <p>
-                Learning React Step by step with modern frontend engineering practices.
-            </p>
+            <div className="hero-content">
+                <h1>Welcome to AmazonScale</h1>
+
+                <h2>Your Enterprise E-Commerce Platform</h2>
+
+                <p>
+                    Discover millions of products, lightning-fast delivery, secure
+                    payments, and a seamless shopping experience built with modern
+                    frontend engineering.
+                </p>
+
+                <button className="shop-now-btn">
+                    Shop Now
+                </button>
+            </div>
         </section>
     );
 }

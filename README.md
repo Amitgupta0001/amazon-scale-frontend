@@ -1,16 +1,24 @@
-# AmazonScale Frontend
-
 <div align="center">
 
 # 🛒 AmazonScale Frontend
 
-**Enterprise-grade Frontend for the AmazonScale E-Commerce Platform**
+<img src="./src/assets/logos/logo.svg" alt="AmazonScale Logo" width="120"/>
 
-Built with modern frontend engineering practices using **React**, **TypeScript**, and **Vite**.
+# AmazonScale Frontend
+
+**Enterprise-Grade E-Commerce Frontend**
+
+Built with **React**, **TypeScript**, and **Vite** while following modern software engineering and frontend architecture practices.
+
+![Status](https://img.shields.io/badge/Status-Active%20Development-orange)
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![Vite](https://img.shields.io/badge/Vite-7.x-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-🚧 **Project Status:** Active Development
+🚧 **Currently Under Active Development**
 
 </div>
 
@@ -18,108 +26,124 @@ Built with modern frontend engineering practices using **React**, **TypeScript**
 
 # 📖 Overview
 
-AmazonScale Frontend is the client-side application for the AmazonScale E-Commerce Platform.
+AmazonScale Frontend is the client-side application of the **AmazonScale E-Commerce Platform**.
 
-The objective of this project is not only to build a production-ready frontend but also to deeply understand modern frontend technologies by implementing them from scratch using industry-standard engineering practices.
+The objective of this project is to build a production-ready, scalable, and maintainable frontend while learning every technology from first principles instead of relying on tutorials.
 
-This project complements the **AmazonScale Backend**, which is built using Spring Boot.
+This project complements the **AmazonScale Backend**, developed using Spring Boot.
 
 ---
 
-# 🎯 Learning Objectives
+# 🎯 Objectives
 
-This repository is being developed to learn and master:
+The project is focused on learning and implementing:
 
 - React
 - TypeScript
-- Frontend Architecture
-- Component-Based Development
 - Modern JavaScript (ES6+)
-- REST API Integration
+- Component-Based Architecture
 - Responsive UI Development
-- Frontend Performance
+- State Management
+- REST API Integration
+- Authentication
 - Testing
-- CI/CD
 - Docker
+- CI/CD
 - Production Deployment
 
-Every feature will be implemented only after understanding the underlying concepts and architecture.
+Every feature is designed before implementation using real software engineering practices.
 
 ---
 
-# 🚀 Current Progress
+# 🚀 Development Roadmap
 
-## Phase 0 — Project Foundation
+## ✅ Phase 0 — Project Foundation
 
-- ✅ GitHub Repository Created
-- ✅ Project Planning
-- ✅ Initial Documentation
-- ✅ Git Workflow Setup
-
----
-
-## Phase 1 — Project Bootstrap
-
-Completed
-
-- ✅ React
-- ✅ TypeScript
-- ✅ Vite
-- ✅ ESLint
-- ✅ Project Bootstrapping
-- ✅ Initial Project Structure
+- GitHub Repository
+- Git Workflow
+- Initial Documentation
+- Project Planning
 
 ---
 
-## Upcoming Phases
+## ✅ Phase 1 — Project Bootstrap
 
-- ⏳ Components & JSX
-- ⏳ React Hooks
-- ⏳ Routing
-- ⏳ Tailwind CSS
-- ⏳ API Integration
-- ⏳ Authentication
-- ⏳ State Management
-- ⏳ Testing
-- ⏳ Docker
-- ⏳ CI/CD
-- ⏳ Production Deployment
+- React
+- TypeScript
+- Vite
+- ESLint
+- Initial Project Setup
+- Development Environment
+
+---
+
+## 🚧 Phase 2 — React Fundamentals & Layout
+
+### Completed
+
+- Component-Based Architecture
+- Application Layout
+- Header Component
+- Footer Component
+- Hero Component
+- Navigation Component Structure
+- Custom AmazonScale Logo
+- Scalable Folder Structure
+- Component-Level CSS Organization
+
+### Currently Working On
+
+- Delivery Component
+- Search Bar
+- Navigation Components
+
+---
+
+## 🔜 Upcoming Phases
+
+- Home Page
+- Product Cards
+- Product Listing
+- Product Details
+- Authentication
+- Routing
+- API Integration
+- Shopping Cart
+- Wishlist
+- Checkout
+- Orders
+- Testing
+- Docker
+- CI/CD
+- Deployment
 
 ---
 
 # 🛠 Current Tech Stack
 
-## Framework
-
-- React 19
-
-## Language
-
-- TypeScript
-
-## Build Tool
-
-- Vite
-
-## Linting
-
-- ESLint
+| Category | Technology |
+|----------|------------|
+| Framework | React 19 |
+| Language | TypeScript |
+| Build Tool | Vite |
+| Linting | ESLint |
+| Styling | CSS |
 
 ---
 
 # 📦 Planned Tech Stack
 
-The following technologies will be integrated during development:
-
-### Styling
+### UI
 
 - Tailwind CSS
+- shadcn/ui
+- Lucide React
 
 ### Routing
 
 - React Router
 
-### HTTP Client
+### HTTP
 
 - Axios
 
@@ -134,14 +158,6 @@ The following technologies will be integrated during development:
 ### Validation
 
 - Zod
-
-### UI Components
-
-- shadcn/ui
-
-### Icons
-
-- Lucide React
 
 ### Notifications
 
@@ -163,39 +179,83 @@ The following technologies will be integrated during development:
 
 ---
 
-# 🏗 Planned Project Structure
+# 🏗 Current Project Structure
 
-```
+```text
 src/
+
+├── app/
 │
-├── api/
 ├── assets/
+│   ├── icons/
+│   ├── images/
+│   └── logos/
+│
 ├── components/
-├── config/
-├── constants/
-├── features/
-├── hooks/
-├── layouts/
+│
+│   ├── common/
+│
+│   ├── layout/
+│   │
+│   │   ├── Header/
+│   │   └── Footer/
+│   │
+│   └── navigation/
+│       ├── Logo/
+│       ├── Delivery/
+│       ├── SearchBar/
+│       ├── Language/
+│       ├── Account/
+│       ├── Orders/
+│       └── Cart/
+│
 ├── pages/
-├── routes/
-├── services/
-├── store/
+│   └── Home/
+│
 ├── styles/
 ├── types/
 └── utils/
 ```
 
-This structure will evolve as the project grows.
+---
+
+# 🏛 Architecture
+
+The project follows a modular component architecture.
+
+```text
+App
+│
+├── Header
+│     ├── Logo
+│     ├── Delivery
+│     ├── SearchBar
+│     ├── Language
+│     ├── Account
+│     ├── Orders
+│     └── Cart
+│
+├── Home
+│     └── Hero
+│
+└── Footer
+```
+
+Every component owns its own:
+
+- Component
+- Styles
+- Exports
+
+making the application scalable and maintainable.
 
 ---
 
-# 🔗 Backend Integration
+# 🔗 Backend
 
-The frontend will consume REST APIs exposed by the AmazonScale Backend.
+AmazonScale Frontend communicates with the AmazonScale Backend using REST APIs.
 
 Backend Repository:
-
-**AmazonScale Backend**
 
 https://github.com/Amitgupta0001/amazon-scale-backend
 
@@ -203,34 +263,25 @@ https://github.com/Amitgupta0001/amazon-scale-backend
 
 # ⚙️ Getting Started
 
-## Prerequisites
-
-- Node.js
-- npm
-
----
-
-## Installation
-
-Clone the repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/Amitgupta0001/amazon-scale-frontend.git
 ```
 
-Navigate into the project
+## Navigate
 
 ```bash
 cd amazon-scale-frontend
 ```
 
-Install dependencies
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-Start the development server
+## Run Development Server
 
 ```bash
 npm run dev
@@ -238,56 +289,39 @@ npm run dev
 
 ---
 
-# 📁 Current Project Structure
+# 🧠 Development Workflow
 
-```
-amazon-scale-frontend/
-│
-├── docs/
-├── public/
-├── src/
-│
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
+Every feature follows the same engineering process:
+
+1. Requirement Analysis
+2. Architecture Design
+3. Component Design
+4. Folder Organization
+5. Implementation
+6. Styling
+7. Testing
+8. Git Commit
+9. Documentation Update
 
 ---
 
-# 🧠 Development Philosophy
+# 📌 Current Status
 
-This project follows an engineering-first approach.
-
-Every module is developed using the following workflow:
-
-1. Learn the concept
-2. Understand the architecture
-3. Design the solution
-4. Implement the feature
-5. Review the code
-6. Test the implementation
-7. Commit changes
-8. Update documentation
-
-The goal is to understand *why* each technology is used, not just *how* to use it.
+| Item | Status |
+|------|--------|
+| Version | v0.2.0 |
+| Phase | Phase 2 |
+| Header | 🚧 In Progress |
+| Logo | ✅ Completed |
+| Delivery | ⏳ Next |
+| Search Bar | ⏳ Planned |
 
 ---
 
-# 📌 Repository Status
+<div align="center">
 
-Current Version
+### Building AmazonScale one feature at a time.
 
-```
-v0.1.0
-```
+**Learn • Design • Build • Review • Repeat**
 
-Status
-
-```
-Phase 1 Complete
-```
-
+</div>

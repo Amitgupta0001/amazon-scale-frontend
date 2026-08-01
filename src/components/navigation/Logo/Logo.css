@@ -1,0 +1,37 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.25s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo__image {
+    width: 44px;
+    height: 44px;
+}
+
+.logo__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__title {
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo__subtitle {
+    margin-top: 3px;
+    color: #d6d6d6;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+}

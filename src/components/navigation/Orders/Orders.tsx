@@ -1,7 +1,7 @@
 function Orders() {
     return (
         <div>
-            Orders
+            Returns & Orders
         </div>
     );
 }

@@ -1,7 +1,9 @@
 function Delivery() {
     return (
         <div>
-            Delivery
+            📍
+            Deliver to
+            Bangalore 560078
         </div>
     );
 }

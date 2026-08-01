@@ -1,7 +1,8 @@
 function SearchBar() {
     return (
+
         <div>
-            SearchBar
+            Search
         </div>
     );
 }

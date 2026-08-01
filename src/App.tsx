@@ -1,6 +1,6 @@
-import Header from "./components/layout/Header";
-import Hero from "./components/Hero";
-import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header/Header.tsx";
+import Hero from "./components/Hero.tsx";
+import Footer from "./components/layout/Footer/Footer.tsx";
 
 function App() {
     return (

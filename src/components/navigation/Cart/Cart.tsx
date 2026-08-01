@@ -1,7 +1,7 @@
 function Cart() {
     return (
         <div>
-            Cart
+            🛒 0 Cart
         </div>
     );
 }

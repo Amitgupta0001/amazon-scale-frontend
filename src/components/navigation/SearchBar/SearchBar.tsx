@@ -9,6 +9,7 @@ function SearchBar() {
             <select
                 className="search-bar__category"
                 defaultValue="all"
+                aria-label="Product Category"
             >
                 <option value="all">All</option>
                 <option value="electronics">Electronics</option>
@@ -16,19 +17,23 @@ function SearchBar() {
                 <option value="books">Books</option>
                 <option value="home">Home</option>
                 <option value="beauty">Beauty</option>
+                <option value="sports">Sports</option>
+                <option value="toys">Toys</option>
             </select>
 
             <input
-                type="text"
                 className="search-bar__input"
+                type="search"
                 placeholder="Search AmazonScale"
+                aria-label="Search Products"
             />
 
             <button
                 className="search-bar__button"
                 type="submit"
+                aria-label="Search"
             >
-                <Search size={22}/>
+                <Search size={22} strokeWidth={2.2} />
             </button>
 
         </form>

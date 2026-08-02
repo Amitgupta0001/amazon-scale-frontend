@@ -10,8 +10,8 @@ import Cart from "../../navigation/Cart";
 
 function Header() {
     return (
-        <header className="header">
-            <div className="header-container">
+        <header className="header" role="banner">
+            <div className="header__container">
                 <Logo />
                 <Delivery />
                 <SearchBar />

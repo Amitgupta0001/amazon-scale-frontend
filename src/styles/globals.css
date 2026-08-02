@@ -1,0 +1,15 @@
+/* Global design system variables and tokens */
+:root {
+  --color-amazon-navy: #131921;
+  --color-amazon-dark: #232f3e;
+  --color-amazon-accent: #febd69;
+  --color-amazon-orange: #ff9900;
+  --color-text-white: #ffffff;
+  --color-text-subtle: #cccccc;
+  --color-text-dark: #111111;
+  --focus-ring-color: #ff9900;
+  --border-radius-sm: 4px;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+  --transition-fast: 0.2s ease;
+}

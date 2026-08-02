@@ -1,30 +1,30 @@
 .account {
     display: flex;
     align-items: center;
-
-    gap: 8px;
-
-    padding: 8px 10px;
-
+    gap: 6px;
+    padding: 6px 8px;
+    background: transparent;
     border: 1px solid transparent;
-
     border-radius: 4px;
-
     cursor: pointer;
-
-    transition: border-color 0.2s ease,
-    background-color 0.2s ease;
+    color: inherit;
+    text-align: left;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .account:hover {
     border-color: #ffffff;
 }
 
+.account:focus-visible {
+    outline: 2px solid #ff9900;
+    outline-offset: 2px;
+}
+
 .account__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #ffffff;
 }
 
@@ -35,14 +35,13 @@
 
 .account__label {
     font-size: 11px;
-
-    color: #d6d6d6;
+    color: #cccccc;
+    line-height: 1.1;
 }
 
 .account__title {
-    font-size: 14px;
-
-    font-weight: 600;
-
+    font-size: 13px;
+    font-weight: 700;
     color: #ffffff;
+    line-height: 1.2;
 }

@@ -1,45 +1,38 @@
 .language {
     display: flex;
     align-items: center;
-
     gap: 6px;
-
-    padding: 8px 10px;
-
+    padding: 6px 8px;
+    background: transparent;
     border: 1px solid transparent;
-
     border-radius: 4px;
-
     cursor: pointer;
-
-    transition: border-color .2s ease,
-    background-color .2s ease;
+    color: inherit;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .language:hover {
-
     border-color: #ffffff;
-
 }
 
-.language__icon{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:white;
-
+.language:focus-visible {
+    outline: 2px solid #ff9900;
+    outline-offset: 2px;
 }
 
-.language__text{
+.language__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
 
-    font-size:14px;
+.language__text {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+}
 
-    font-weight:600;
-
-    color:white;
-
+.language__arrow {
+    color: #cccccc;
 }

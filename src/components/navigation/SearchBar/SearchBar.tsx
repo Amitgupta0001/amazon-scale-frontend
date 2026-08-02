@@ -1,11 +1,9 @@
 import "./SearchBar.css";
-
 import { Search } from "lucide-react";
 
 function SearchBar() {
     return (
-        <form className="search-bar">
-
+        <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()}>
             <select
                 className="search-bar__category"
                 defaultValue="all"
@@ -33,9 +31,8 @@ function SearchBar() {
                 type="submit"
                 aria-label="Search"
             >
-                <Search size={22} strokeWidth={2.2} />
+                <Search size={20} strokeWidth={2.5} className="search-bar__icon" />
             </button>
-
         </form>
     );
 }

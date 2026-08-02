@@ -1,113 +1,86 @@
 .search-bar {
-
     flex: 1;
-
     display: flex;
-
     align-items: center;
-
-    height: 44px;
-
+    height: 40px;
     max-width: 760px;
-
-    background: #ffffff;
-
-    border-radius: 8px;
-
+    background-color: #ffffff;
+    border-radius: 6px;
     overflow: hidden;
-
-    transition: box-shadow 0.2s ease;
-
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
 }
 
 .search-bar:focus-within {
-
-    box-shadow: 0 0 0 3px #ff9900;
-
+    border-color: #ff9900;
+    box-shadow: 0 0 0 2px rgba(255, 153, 0, 0.4);
 }
 
 .search-bar__category {
-
-    width: 90px;
-
     height: 100%;
-
+    width: 90px;
     border: none;
-
+    border-right: 1px solid #dddddd;
     outline: none;
-
-    background: #f3f3f3;
-
+    background-color: #f3f3f3;
     cursor: pointer;
-
-    padding: 0 12px;
-
-    font-size: 14px;
-
+    padding: 0 10px;
+    font-size: 13px;
     color: #333333;
-
+    font-weight: 500;
+    transition: background-color 0.2s ease;
 }
 
 .search-bar__category:hover {
+    background-color: #e6e6e6;
+}
 
-    background: #e6e6e6;
-
+.search-bar__category:focus-visible {
+    background-color: #e6e6e6;
 }
 
 .search-bar__input {
-
     flex: 1;
-
     height: 100%;
-
     border: none;
-
     outline: none;
-
-    padding: 0 18px;
-
-    font-size: 15px;
-
+    padding: 0 14px;
+    font-size: 14px;
     color: #111111;
-
+    background: transparent;
 }
 
 .search-bar__input::placeholder {
-
-    color: #777777;
-
+    color: #767676;
+    font-size: 14px;
 }
 
 .search-bar__button {
-
-    width: 60px;
-
+    width: 48px;
     height: 100%;
-
     border: none;
-
-    background: #febd69;
-
+    background-color: #febd69;
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     cursor: pointer;
-
     transition: background-color 0.2s ease;
-
+    padding: 0;
 }
 
 .search-bar__button:hover {
-
-    background: #f3a847;
-
+    background-color: #f3a847;
 }
 
 .search-bar__button:active {
+    background-color: #e69500;
+}
 
-    background: #e69500;
+.search-bar__button:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: -2px;
+}
 
+.search-bar__icon {
+    color: #131921;
 }

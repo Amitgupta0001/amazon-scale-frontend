@@ -1,21 +1,18 @@
 import "./Account.css";
-
 import { User } from "lucide-react";
 
 function Account() {
     return (
-        <div
+        <button
+            type="button"
             className="account"
-            role="button"
-            tabIndex={0}
             aria-label="Account and Lists"
         >
             <div className="account__icon">
-                <User size={20} />
+                <User size={18} />
             </div>
 
             <div className="account__content">
-
                 <span className="account__label">
                     Hello, Sign in
                 </span>
@@ -23,9 +20,8 @@ function Account() {
                 <span className="account__title">
                     Account & Lists
                 </span>
-
             </div>
-        </div>
+        </button>
     );
 }
 

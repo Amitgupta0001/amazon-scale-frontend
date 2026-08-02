@@ -1,21 +1,18 @@
 import "./Delivery.css";
-
 import { MapPin } from "lucide-react";
 
 function Delivery() {
     return (
-        <div
+        <button
+            type="button"
             className="delivery"
-            role="button"
-            tabIndex={0}
-            aria-label="Select delivery location"
+            aria-label="Select delivery location, currently Bangalore 560078"
         >
             <div className="delivery__icon">
-                <MapPin size={20} />
+                <MapPin size={18} />
             </div>
 
             <div className="delivery__content">
-
                 <span className="delivery__label">
                     Deliver to
                 </span>
@@ -23,9 +20,8 @@ function Delivery() {
                 <span className="delivery__location">
                     Bangalore 560078
                 </span>
-
             </div>
-        </div>
+        </button>
     );
 }
 

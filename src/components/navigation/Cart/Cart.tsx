@@ -1,29 +1,24 @@
 import "./Cart.css";
-
 import { ShoppingCart } from "lucide-react";
 
 function Cart() {
     return (
-        <div
+        <button
+            type="button"
             className="cart"
-            role="button"
-            tabIndex={0}
-            aria-label="Shopping Cart"
+            aria-label="Shopping Cart, 0 items"
         >
             <div className="cart__icon">
-
-                <ShoppingCart size={22} />
-
+                <ShoppingCart size={24} />
                 <span className="cart__count">
                     0
                 </span>
-
             </div>
 
             <span className="cart__text">
                 Cart
             </span>
-        </div>
+        </button>
     );
 }
 

@@ -1,14 +1,17 @@
-import Header from "./components/layout/Header/Header.tsx";
-import Hero from "./components/Hero.tsx";
-import Footer from "./components/layout/Footer/Footer.tsx";
+import Header from "./components/layout/Header";
+import Hero from "./components/Hero";
+import Footer from "./components/layout/Footer";
+import "./App.css";
 
 function App() {
     return (
-        <>
+        <div className="app">
             <Header />
-            <Hero />
+            <main className="app__main">
+                <Hero />
+            </main>
             <Footer />
-        </>
+        </div>
     );
 }
 

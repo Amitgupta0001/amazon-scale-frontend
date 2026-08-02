@@ -1,51 +1,51 @@
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-
+    gap: 10px;
     text-decoration: none;
-
     cursor: pointer;
-
     user-select: none;
-
-    transition: transform 0.2s ease;
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .logo:hover {
-    transform: scale(1.02);
+    border-color: #ffffff;
+    transform: scale(1.01);
+}
+
+.logo:focus-visible {
+    outline: 2px solid #ff9900;
+    outline-offset: 2px;
 }
 
 .logo__image {
-    width: 44px;
-    height: 44px;
-
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
 }
 
 .logo__content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .logo__title {
     margin: 0;
-
     color: #ffffff;
-
-    font-size: 22px;
-
+    font-size: 20px;
     font-weight: 700;
-
-    line-height: 1;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
 }
 
 .logo__subtitle {
-    margin-top: 3px;
-
-    color: #d6d6d6;
-
-    font-size: 12px;
-
+    margin-top: 2px;
+    color: #cccccc;
+    font-size: 11px;
     letter-spacing: 0.4px;
+    line-height: 1;
 }

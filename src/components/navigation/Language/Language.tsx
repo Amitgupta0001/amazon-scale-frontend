@@ -1,14 +1,12 @@
 import "./Language.css";
-
 import { Globe, ChevronDown } from "lucide-react";
 
 function Language() {
     return (
-        <div
+        <button
+            type="button"
             className="language"
-            role="button"
-            tabIndex={0}
-            aria-label="Language Selector"
+            aria-label="Language Selector, currently English"
         >
             <div className="language__icon">
                 <Globe size={18} />
@@ -18,11 +16,8 @@ function Language() {
                 EN
             </span>
 
-            <ChevronDown
-                size={16}
-                strokeWidth={2.4}
-            />
-        </div>
+            <ChevronDown size={14} strokeWidth={2.4} className="language__arrow" />
+        </button>
     );
 }
 

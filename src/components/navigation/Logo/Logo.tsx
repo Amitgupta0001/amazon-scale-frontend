@@ -12,12 +12,14 @@ function Logo() {
                 src={logo}
                 alt="AmazonScale Logo"
                 className="logo__image"
+                width={40}
+                height={40}
             />
 
             <div className="logo__content">
-                <h1 className="logo__title">
+                <span className="logo__title">
                     AmazonScale
-                </h1>
+                </span>
 
                 <span className="logo__subtitle">
                     Enterprise Store

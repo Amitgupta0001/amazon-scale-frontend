@@ -1,5 +1,5 @@
 import Header from "./components/layout/Header";
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
 import Footer from "./components/layout/Footer";
 import "./App.css";
 
@@ -8,7 +8,7 @@ function App() {
         <div className="app">
             <Header />
             <main className="app__main">
-                <Hero />
+                <Home />
             </main>
             <Footer />
         </div>

@@ -1,0 +1,45 @@
+.language {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 10px;
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: border-color .2s ease,
+    background-color .2s ease;
+}
+
+.language:hover {
+
+    border-color: #ffffff;
+
+}
+
+.language__icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:white;
+
+}
+
+.language__text{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:white;
+
+}

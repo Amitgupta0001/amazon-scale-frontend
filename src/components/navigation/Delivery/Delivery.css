@@ -1,0 +1,33 @@
+.delivery {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+}
+
+.delivery:hover {
+    border: 1px solid white;
+}
+
+.delivery-icon {
+    font-size: 18px;
+}
+
+.delivery-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.delivery-label{
+    font-size: 11px;
+    color: #d6d6d6;
+}
+
+.delivery-location{
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}

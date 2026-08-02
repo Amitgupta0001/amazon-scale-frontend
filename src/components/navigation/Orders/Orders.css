@@ -1,0 +1,48 @@
+.orders {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 10px;
+
+    border: 1px solid transparent;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.orders:hover {
+    border-color: #ffffff;
+}
+
+.orders__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+}
+
+.orders__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.orders__label {
+    font-size: 11px;
+
+    color: #d6d6d6;
+}
+
+.orders__title {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}

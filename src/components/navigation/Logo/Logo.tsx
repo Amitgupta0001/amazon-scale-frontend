@@ -3,7 +3,11 @@ import logo from "../../../assets/logos/logo.svg";
 
 function Logo() {
     return (
-        <div className="logo">
+        <a
+            href="/"
+            className="logo"
+            aria-label="AmazonScale Home"
+        >
             <img
                 src={logo}
                 alt="AmazonScale Logo"
@@ -16,10 +20,10 @@ function Logo() {
                 </h1>
 
                 <span className="logo__subtitle">
-          Enterprise Store
-        </span>
+                    Enterprise Store
+                </span>
             </div>
-        </div>
+        </a>
     );
 }
 

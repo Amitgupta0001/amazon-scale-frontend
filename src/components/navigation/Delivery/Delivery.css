@@ -1,33 +1,47 @@
 .delivery {
     display: flex;
     align-items: center;
+
     gap: 8px;
-    cursor: pointer;
-    padding: 8px;
+
+    padding: 8px 10px;
+
     border: 1px solid transparent;
-    transition: all 0.25s ease;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: border-color 0.2s ease;
 }
 
 .delivery:hover {
-    border: 1px solid white;
+    border-color: #ffffff;
 }
 
-.delivery-icon {
-    font-size: 18px;
+.delivery__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
 }
 
-.delivery-content {
+.delivery__content {
     display: flex;
     flex-direction: column;
 }
 
-.delivery-label{
+.delivery__label {
     font-size: 11px;
+
     color: #d6d6d6;
 }
 
-.delivery-location{
+.delivery__location {
     font-size: 14px;
+
     font-weight: 600;
-    color: white;
+
+    color: #ffffff;
 }

@@ -1,10 +1,11 @@
 import "./Cart.css";
+import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 
 function Cart() {
     return (
-        <button
-            type="button"
+        <Link
+            to="/cart"
             className="cart"
             aria-label="Shopping Cart, 0 items"
         >
@@ -18,7 +19,7 @@ function Cart() {
             <span className="cart__text">
                 Cart
             </span>
-        </button>
+        </Link>
     );
 }
 

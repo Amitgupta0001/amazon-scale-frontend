@@ -1,9 +1,18 @@
 import "./SearchBar.css";
 import { Search } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import type { FormEvent } from "react";
 
 function SearchBar() {
+    const navigate = useNavigate();
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        navigate("/products");
+    };
+
     return (
-        <form className="search-bar" role="search" onSubmit={(e) => e.preventDefault()}>
+        <form className="search-bar" role="search" onSubmit={handleSubmit}>
             <select
                 className="search-bar__category"
                 defaultValue="all"

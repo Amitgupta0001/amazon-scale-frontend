@@ -21,30 +21,30 @@ function Footer() {
             <div className="footer__content">
                 <div className="footer__section">
                     <h3>Get to Know Us</h3>
-                    <a href="#">About AmazonScale</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Blog</a>
+                    <span className="footer__link">About AmazonScale</span>
+                    <span className="footer__link">Careers</span>
+                    <span className="footer__link">Blog</span>
                 </div>
 
                 <div className="footer__section">
                     <h3>Support</h3>
-                    <a href="#">Help Center</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">Returns</a>
+                    <span className="footer__link">Help Center</span>
+                    <span className="footer__link">Contact Us</span>
+                    <span className="footer__link">Returns</span>
                 </div>
 
                 <div className="footer__section">
                     <h3>Business</h3>
-                    <a href="#">Sell on AmazonScale</a>
-                    <a href="#">Advertise</a>
-                    <a href="#">Affiliates</a>
+                    <span className="footer__link">Sell on AmazonScale</span>
+                    <span className="footer__link">Advertise</span>
+                    <span className="footer__link">Affiliates</span>
                 </div>
 
                 <div className="footer__section">
                     <h3>Legal</h3>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookies</a>
+                    <span className="footer__link">Privacy Policy</span>
+                    <span className="footer__link">Terms of Service</span>
+                    <span className="footer__link">Cookies</span>
                 </div>
             </div>
 

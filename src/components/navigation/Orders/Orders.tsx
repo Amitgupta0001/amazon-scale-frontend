@@ -1,10 +1,11 @@
 import "./Orders.css";
+import { Link } from "react-router-dom";
 import { Package } from "lucide-react";
 
 function Orders() {
     return (
-        <button
-            type="button"
+        <Link
+            to="/orders"
             className="orders"
             aria-label="Returns and Orders"
         >
@@ -21,7 +22,7 @@ function Orders() {
                     & Orders
                 </span>
             </div>
-        </button>
+        </Link>
     );
 }
 

@@ -2,7 +2,9 @@ import { BrowserRouter } from "react-router-dom";
 import type { ReactNode } from "react";
 
 
-type AppProviderProps = {children:ReactNode;};
+type AppProviderProps = {
+    children:ReactNode;
+};
 
 function AppProviders({children}:AppProviderProps){
     return (

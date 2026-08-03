@@ -1,10 +1,11 @@
 import "./Logo.css";
+import { Link } from "react-router-dom";
 import logo from "../../../assets/logos/logo.svg";
 
 function Logo() {
     return (
-        <a
-            href="/"
+        <Link
+            to="/"
             className="logo"
             aria-label="AmazonScale Home"
         >
@@ -25,7 +26,7 @@ function Logo() {
                     Enterprise Store
                 </span>
             </div>
-        </a>
+        </Link>
     );
 }
 

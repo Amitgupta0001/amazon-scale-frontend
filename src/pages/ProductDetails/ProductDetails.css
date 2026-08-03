@@ -1,0 +1,30 @@
+.page-state__meta {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 4px;
+	margin-top: 24px;
+	padding: 14px 18px;
+	border-radius: 14px;
+	background: #f8fafc;
+	border: 1px solid #e5e7eb;
+}
+
+.page-state__meta-label {
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #6b7280;
+}
+
+.page-state__meta-value {
+	font-size: 16px;
+	font-weight: 700;
+	color: #111827;
+}
+
+.page-state__button--secondary {
+	background: #ffffff;
+	color: #111827;
+	border-color: #d1d5db;
+}

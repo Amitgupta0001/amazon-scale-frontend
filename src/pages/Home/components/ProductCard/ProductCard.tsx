@@ -1,4 +1,5 @@
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 import { Star, ShoppingCart, Check } from "lucide-react";
 
 export interface Product {
@@ -33,32 +34,37 @@ function ProductCard({ product, onAddToCart }: ProductCardProps) {
         discountPercent,
         inStock = true
     } = product;
+    const productUrl = `/products/${product.id}`;
 
     return (
         <article className="product-card">
-            <div className="product-card__image-container">
-                {badge && (
-                    <span className="product-card__badge product-card__badge--highlight">
-                        {badge}
-                    </span>
-                )}
-                {discountPercent && !badge && (
-                    <span className="product-card__badge product-card__badge--deal">
-                        {discountPercent}% OFF
-                    </span>
-                )}
+            <Link to={productUrl} className="product-card__media-link" aria-label={`View details for ${name}`}>
+                <div className="product-card__image-container">
+                    {badge && (
+                        <span className="product-card__badge product-card__badge--highlight">
+                            {badge}
+                        </span>
+                    )}
+                    {discountPercent && !badge && (
+                        <span className="product-card__badge product-card__badge--deal">
+                            {discountPercent}% OFF
+                        </span>
+                    )}
 
-                <div className="product-card__image-placeholder" aria-hidden="true">
-                    <span className="product-card__image-icon">📦</span>
-                    <span className="product-card__image-cat">{category}</span>
+                    <div className="product-card__image-placeholder" aria-hidden="true">
+                        <span className="product-card__image-icon">📦</span>
+                        <span className="product-card__image-cat">{category}</span>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
             <div className="product-card__content">
                 <span className="product-card__category">{category}</span>
 
                 <h3 className="product-card__title" title={name}>
-                    {name}
+                    <Link to={productUrl} className="product-card__title-link">
+                        {name}
+                    </Link>
                 </h3>
 
                 <div className="product-card__rating" aria-label={`Rating ${rating} out of 5 stars from ${reviewCount} reviews`}>

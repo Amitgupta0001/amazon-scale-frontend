@@ -1,10 +1,11 @@
 import "./Account.css";
+import { Link } from "react-router-dom";
 import { User } from "lucide-react";
 
 function Account() {
     return (
-        <button
-            type="button"
+        <Link
+            to="/login"
             className="account"
             aria-label="Account and Lists"
         >
@@ -21,7 +22,7 @@ function Account() {
                     Account & Lists
                 </span>
             </div>
-        </button>
+        </Link>
     );
 }
 

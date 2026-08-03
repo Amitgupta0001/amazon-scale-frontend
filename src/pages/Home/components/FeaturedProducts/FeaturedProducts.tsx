@@ -1,5 +1,6 @@
 import "./FeaturedProducts.css";
 import ProductGrid from "../ProductGrid";
+import { Link } from "react-router-dom";
 import type { Product } from "../ProductCard";
 
 const FEATURED_PRODUCTS: Product[] = [
@@ -62,9 +63,9 @@ function FeaturedProducts() {
                     </p>
                 </div>
 
-                <a href="#view-all" className="featured-products__link">
+                <Link to="/products" className="featured-products__link">
                     View All Featured →
-                </a>
+                </Link>
             </div>
 
             <ProductGrid products={FEATURED_PRODUCTS} />

@@ -1,365 +1,382 @@
 <div align="center">
 
-# 🛒 AmazonScale Frontend
-
-<img src="./src/assets/logos/logo.svg" alt="AmazonScale Logo" width="120"/>
-
 # AmazonScale Frontend
 
-**Enterprise-Grade E-Commerce Frontend**
+Enterprise-grade e-commerce frontend inspired by modern large-scale shopping platforms.
 
-Built with **React 19**, **TypeScript**, and **Vite** while following modern software engineering and frontend architecture practices.
-
-![Status](https://img.shields.io/badge/Status-Phase%202%20Completed-brightgreen)
-![React](https://img.shields.io/badge/React-19.x-blue)
-![TypeScript](https://img.shields.io/badge/TypeScript-6.x-blue)
-![Vite](https://img.shields.io/badge/Vite-8.x-purple)
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue?logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8.2-646CFF?logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React%20Router-DOM-EF4444?logo=reactrouter&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
-
----
-
-✨ **Phase 2 — Core Layout & Home Page Implemented**
+![GitHub Stars](https://img.shields.io/badge/GitHub%20Stars-Placeholder-lightgrey)
 
 </div>
 
----
+## Table of Contents
 
-# 📖 Overview
+- [About The Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Architecture](#project-architecture)
+- [Application Flow](#application-flow)
+- [Folder Structure](#folder-structure)
+- [Routing](#routing)
+- [Components](#components)
+- [Screenshots](#screenshots)
+- [Getting Started](#getting-started)
+- [Scripts](#scripts)
+- [Development Roadmap](#development-roadmap)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
 
-AmazonScale Frontend is the client-side application of the **AmazonScale E-Commerce Platform**.
+## About The Project
 
-The objective of this project is to build a production-ready, scalable, and maintainable e-commerce frontend while adhering to strict component-driven architecture, modular BEM CSS styling, and clean software design patterns.
+AmazonScale Frontend is an enterprise-grade e-commerce frontend application built to simulate how a production web storefront is structured, organized, and maintained.
 
-This project seamlessly integrates with the **AmazonScale Backend**, developed using Java and Spring Boot.
+The project exists to practice and demonstrate modern frontend engineering in a realistic architecture rather than as a tutorial demo. It emphasizes reusable components, route-based layouts, scalable folder organization, and a clean UI system that can support future product, authentication, and commerce features.
 
----
+### Why It Exists
 
-# 🎯 Objectives
+- To model a real-world e-commerce frontend architecture
+- To practice building reusable UI systems with React and TypeScript
+- To keep the application organized using production-style folder boundaries
+- To prepare the codebase for future expansion into authentication, cart logic, and backend integration
 
-The project is focused on learning and implementing enterprise-level practices:
+### Learning Goals
 
-- React 19 Component Architecture
-- TypeScript Strong Typing & Interfaces
-- BEM (Block Element Modifier) CSS Design System
-- Modern Responsive Layouts & Flexbox/Grid
-- Scalable Navigation Suite & Header/Footer
-- Dynamic Home Page (Hero, Categories, Products, Deals, Recommendations)
-- Lucide React Icon Library Integration
-- REST API Integration Strategy
-- Docker Containerization & CI/CD Pipelines
+- Build an application shell with reusable navigation components
+- Structure a frontend project using feature-oriented folders
+- Implement layout-based routing with React Router DOM
+- Create responsive, accessible, and maintainable UI sections
 
----
+### Engineering Goals
 
-# 🚀 Development Roadmap
+- Keep the application scalable and production-friendly
+- Favor composition over duplication
+- Preserve clean component boundaries
+- Use semantic HTML and accessible interaction patterns
+- Maintain a predictable, easy-to-review codebase
 
-## ✅ Phase 0 — Project Foundation
-- GitHub Repository Setup
-- Git Branching Strategy & Workflow
-- Initial Project Planning & Architectural Documentation
+## Features
 
----
+### Completed
 
-## ✅ Phase 1 — Project Bootstrap
-- React 19 + TypeScript + Vite Tooling
-- ESLint & Code Formatting Rules
-- Development Environment Setup
-- Global Styles & CSS Tokens
+- React 19 + TypeScript + Vite project setup
+- Application shell with Header and Footer
+- Reusable navigation components
+- Responsive homepage
+- Hero section
+- Category Grid and Category Cards
+- Featured Products section
+- Product Cards and Product Grid
+- Deals section
+- Recommendations section
+- React Router DOM integration
+- Main layout with `Outlet`
+- Nested routes
+- Dynamic product route
+- Working 404 page
+- SPA navigation across primary routes
+- Professional placeholder pages for core sections
 
----
+### In Progress
 
-## ✅ Phase 2 — Core Layout & Home Page Implementation
-- **Header Component Suite**:
-  - `Logo`: Brand Logo display with custom SVG asset
-  - `Delivery`: User location selector with icon support
-  - `SearchBar`: Interactive search input with category filter & quick submit button
-  - `Language`: Regional language and currency preferences dropdown trigger
-  - `Account`: User sign-in status and account dropdown trigger
-  - `Orders`: Direct link to returns and order tracking
-  - `Cart`: Interactive shopping cart indicator with live count badge
-- **Footer Component Suite**: Multi-tier navigational footer with Back-to-Top, company info, and locale controls
-- **Home Page Suite**:
-  - `Hero`: Prominent hero banner with promotional content
-  - `CategoryGrid` & `CategoryCard`: Responsive grid displaying featured product categories
-  - `ProductGrid` & `ProductCard`: Dynamic product card layout with ratings, prices, and CTA buttons
-  - `FeaturedProducts`: Section showcasing highlighted products
-  - `DealsSection`: Promotional banner for limited-time offers and discounts
-  - `Recommendations`: Tailored product recommendations based on browsing history
+- Product catalog data integration
+- Authentication screens and logic
+- Cart, wishlist, and orders business behavior
+- Backend/API integration
 
----
+### Planned
 
-## 🚧 Phase 3 — Product Catalog & Detail Views (Next Phase)
-- Product Listing & Filter Sidebar
-- Search Results Page
-- Detailed Product Information Page (Image Gallery, Specifications, Reviews)
+- Authorization flows
+- Checkout experience
+- Payment flow
+- State management
+- Testing strategy implementation
+- Deployment pipeline
 
----
+## Tech Stack
 
-## 🔜 Upcoming Phases
-- Client-Side Routing (React Router)
-- State Management (Context API / Redux / Zustand)
-- Shopping Cart & Wishlist Functional Logic
-- User Authentication (Login / Registration / JWT handling)
-- REST API Integration (Axios / TanStack Query)
-- Checkout & Order Management Flow
-- Automated Testing (Vitest / React Testing Library)
-- Dockerization & Deployment (Vercel / GitHub Actions)
+### Frontend
 
----
-
-# 🛠 Current Tech Stack
-
-| Category | Technology | Version |
-|----------|------------|---------|
-| **Framework** | React | `19.2.x` |
-| **Language** | TypeScript | `6.0.x` |
-| **Build Tool** | Vite | `8.2.x` |
-| **Icons** | Lucide React | `1.28.x` |
-| **Styling** | Vanilla CSS (BEM Architecture) | CSS3 |
-| **Code Quality** | ESLint | `10.8.x` |
-
----
-
-# 📦 Planned Tech Stack
-
-### UI & Styling
-- Tailwind CSS / Radix UI / shadcn/ui primitives
-
-### Navigation & Routing
+- React 19
+- TypeScript
+- Vite
 - React Router DOM
+- CSS3
+- Lucide React
 
-### HTTP & State Management
-- Axios
-- TanStack Query (React Query)
+### Development Tools
 
-### Forms & Validation
-- React Hook Form + Zod
+- Git
+- GitHub
+- ESLint
 
-### Notifications
-- Sonner / React Hot Toast
+### Architecture
 
-### Testing & Quality Assurance
-- Vitest
-- React Testing Library
+- Component-Based Architecture
+- Layout-Based Routing
+- Feature-Oriented Folder Structure
 
-### DevOps & Deployment
-- Docker
-- GitHub Actions (CI/CD)
-- Vercel Hosting
+## Project Architecture
 
----
-
-# 🏗 Current Project Structure
+AmazonScale Frontend is organized around a routed application shell and reusable feature modules.
 
 ```text
 src/
-├── assets/
-│   ├── icons/
-│   ├── images/
-│   └── logos/
-│       └── logo.svg
-├── components/
-│   ├── layout/
-│   │   ├── Header/
-│   │   │   ├── Header.tsx
-│   │   │   ├── Header.css
-│   │   │   └── index.ts
-│   │   └── Footer/
-│   │       ├── Footer.tsx
-│   │       ├── Footer.css
-│   │       └── index.ts
-│   └── navigation/
-│       ├── Logo/
-│       │   ├── Logo.tsx
-│       │   ├── Logo.css
-│       │   └── index.ts
-│       ├── Delivery/
-│       │   ├── Delivery.tsx
-│       │   ├── Delivery.css
-│       │   └── index.ts
-│       ├── SearchBar/
-│       │   ├── SearchBar.tsx
-│       │   ├── SearchBar.css
-│       │   └── index.ts
-│       ├── Language/
-│       │   ├── Language.tsx
-│       │   ├── Language.css
-│       │   └── index.ts
-│       ├── Account/
-│       │   ├── Account.tsx
-│       │   ├── Account.css
-│       │   └── index.ts
-│       ├── Orders/
-│       │   ├── Orders.tsx
-│       │   ├── Orders.css
-│       │   └── index.ts
-│       └── Cart/
-│           ├── Cart.tsx
-│           ├── Cart.css
-│           └── index.ts
+├── app/
+├── layouts/
 ├── pages/
-│   └── Home/
-│       ├── Home.tsx
-│       ├── Home.css
-│       ├── index.ts
-│       └── components/
-│           ├── Hero/
-│           │   ├── Hero.tsx
-│           │   ├── Hero.css
-│           │   └── index.ts
-│           ├── CategoryCard/
-│           │   ├── CategoryCard.tsx
-│           │   ├── CategoryCard.css
-│           │   └── index.ts
-│           ├── CategoryGrid/
-│           │   ├── CategoryGrid.tsx
-│           │   ├── CategoryGrid.css
-│           │   └── index.ts
-│           ├── ProductCard/
-│           │   ├── ProductCard.tsx
-│           │   ├── ProductCard.css
-│           │   └── index.ts
-│           ├── ProductGrid/
-│           │   ├── ProductGrid.tsx
-│           │   ├── ProductGrid.css
-│           │   └── index.ts
-│           ├── FeaturedProducts/
-│           │   ├── FeaturedProducts.tsx
-│           │   ├── FeaturedProducts.css
-│           │   └── index.ts
-│           ├── DealsSection/
-│           │   ├── DealsSection.tsx
-│           │   ├── DealsSection.css
-│           │   └── index.ts
-│           └── Recommendations/
-│               ├── Recommendations.tsx
-│               ├── Recommendations.css
-│               └── index.ts
+├── components/
+├── assets/
+├── services/
+├── hooks/
+├── types/
+├── utils/
+├── constants/
 ├── styles/
-│   ├── globals.css
-│   └── hero.css
-├── App.tsx
-├── App.css
-├── index.css
-└── main.tsx
+├── main.tsx
+└── index.css
 ```
 
----
+### Folder Responsibilities
 
-# 🏛 Component Architecture Overview
+- `app/` - Application bootstrap, router composition, and top-level providers
+- `layouts/` - Shared page shells such as `MainLayout`
+- `pages/` - Route-level screens and page-specific component trees
+- `components/` - Reusable UI components shared across pages and layouts
+- `assets/` - Static assets such as logos, icons, images, and fonts
+- `services/` - API clients and service utilities reserved for future backend integration
+- `hooks/` - Shared React hooks
+- `types/` - Central TypeScript types and interfaces
+- `utils/` - Generic utility functions
+- `constants/` - Shared constants and configuration values
+- `styles/` - Global styles and design tokens
+
+## Application Flow
+
+The application follows a simple routed shell pattern:
+
+```mermaid
+flowchart TD
+    A[main.tsx] --> B[App]
+    B --> C[Providers]
+    C --> D[AppRoutes]
+    D --> E[MainLayout]
+    E --> F[Current Page]
+```
+
+### How Routing Works
+
+- `main.tsx` mounts the React application into the DOM
+- `App` wraps the application in the shared provider layer
+- `Providers` supplies `BrowserRouter`
+- `AppRoutes` defines the route tree
+- `MainLayout` renders the shared shell with Header, `Outlet`, and Footer
+- The current route is rendered inside `Outlet`
+
+## Folder Structure
 
 ```text
-App
-├── Header Layout
-│   ├── Logo (Brand & Navigation)
-│   ├── Delivery (Location Selector)
-│   ├── SearchBar (Category Filter & Input)
-│   ├── Language (Locale Selection)
-│   ├── Account (Sign In & Profile)
-│   ├── Orders (Order Tracking)
-│   └── Cart (Item Counter & Cart Link)
-├── Home Page
-│   ├── Hero (Promotional Banner)
-│   ├── CategoryGrid (Category Cards)
-│   ├── FeaturedProducts (Highlighted Catalog Items)
-│   ├── DealsSection (Limited-time Discounts)
-│   └── Recommendations (Personalized Products)
-└── Footer Layout
-    ├── Back To Top Controller
-    ├── Navigation Links Grid
-    └── Copyright & Brand Information
+src/
+├── app/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── AppRoutes.tsx
+│   └── providers.tsx
+├── layouts/
+│   └── MainLayout/
+├── pages/
+│   ├── Home/
+│   ├── Products/
+│   ├── ProductDetails/
+│   ├── Cart/
+│   ├── Wishlist/
+│   ├── Orders/
+│   ├── Login/
+│   ├── Register/
+│   ├── Profile/
+│   ├── Settings/
+│   └── NotFound/
+├── components/
+│   ├── layout/
+│   └── navigation/
+├── assets/
+├── services/
+├── hooks/
+├── types/
+├── utils/
+├── constants/
+└── styles/
 ```
 
----
+### Major Directories
 
-# 📂 Completed Files & Modules Audit
+- `app/` contains the application entry composition and routing setup
+- `layouts/` contains shared shells and structural wrappers
+- `pages/` contains all route targets
+- `components/` contains shared UI building blocks
+- `assets/` contains static brand and media assets
+- `services/`, `hooks/`, `types/`, `utils/`, and `constants/` are reserved for future application growth
 
-| Module / Layer | File Path | Description | Status |
-| :--- | :--- | :--- | :---: |
-| **Root Application** | `src/App.tsx` | Main application layout wrapper | ✅ Completed |
-| **Global Styles** | `src/styles/globals.css` | Base typography, color tokens, reset rules | ✅ Completed |
-| **Header Wrapper** | `src/components/layout/Header/Header.tsx` | Header bar combining all navigation components | ✅ Completed |
-| **Header Styles** | `src/components/layout/Header/Header.css` | BEM styles for layout & header responsiveness | ✅ Completed |
-| **Footer Component** | `src/components/layout/Footer/Footer.tsx` | Multi-section footer with links & back-to-top | ✅ Completed |
-| **Footer Styles** | `src/components/layout/Footer/Footer.css` | BEM styles for footer grid & links | ✅ Completed |
-| **Logo Component** | `src/components/navigation/Logo/Logo.tsx` | AmazonScale logo with link navigation | ✅ Completed |
-| **Delivery Component**| `src/components/navigation/Delivery/Delivery.tsx` | Delivery location selector component | ✅ Completed |
-| **Search Bar Component**| `src/components/navigation/SearchBar/SearchBar.tsx` | Search bar with search icon & dropdown | ✅ Completed |
-| **Language Component** | `src/components/navigation/Language/Language.tsx` | Language and region selector component | ✅ Completed |
-| **Account Component** | `src/components/navigation/Account/Account.tsx` | Account sign-in & list trigger component | ✅ Completed |
-| **Orders Component** | `src/components/navigation/Orders/Orders.tsx` | Returns and order tracking button | ✅ Completed |
-| **Cart Component** | `src/components/navigation/Cart/Cart.tsx` | Cart icon with dynamic item badge | ✅ Completed |
-| **Home Page Page** | `src/pages/Home/Home.tsx` | Main home page aggregating sections | ✅ Completed |
-| **Hero Banner** | `src/pages/Home/components/Hero/Hero.tsx` | Promotional hero section banner | ✅ Completed |
-| **Category Grid** | `src/pages/Home/components/CategoryGrid/CategoryGrid.tsx` | Grid displaying product categories | ✅ Completed |
-| **Category Card** | `src/pages/Home/components/CategoryCard/CategoryCard.tsx` | Individual category card element | ✅ Completed |
-| **Product Grid** | `src/pages/Home/components/ProductGrid/ProductGrid.tsx` | Flexible grid container for product cards | ✅ Completed |
-| **Product Card** | `src/pages/Home/components/ProductCard/ProductCard.tsx` | Reusable product item card with pricing & actions | ✅ Completed |
-| **Featured Products**| `src/pages/Home/components/FeaturedProducts/FeaturedProducts.tsx` | Featured items highlight section | ✅ Completed |
-| **Deals Section** | `src/pages/Home/components/DealsSection/DealsSection.tsx` | Special promotional deals section | ✅ Completed |
-| **Recommendations** | `src/pages/Home/components/Recommendations/Recommendations.tsx` | Product recommendations slider/grid | ✅ Completed |
+## Routing
 
----
+The following routes are currently configured.
 
-# 🔗 Backend Integration
+| Route | Description |
+| --- | --- |
+| `/` | Home page |
+| `/products` | Products placeholder page |
+| `/products/:productId` | Dynamic product details route |
+| `/cart` | Cart placeholder page |
+| `/orders` | Orders placeholder page |
+| `/profile` | Profile placeholder page |
+| `/settings` | Settings placeholder page |
+| `/login` | Login placeholder page |
+| `/register` | Register placeholder page |
+| `*` | Not Found page |
 
-AmazonScale Frontend communicates with the AmazonScale Spring Boot Backend via REST APIs.
+### Routing Notes
 
-- **Backend Repository**: [https://github.com/Amitgupta0001/amazon-scale-backend](https://github.com/Amitgupta0001/amazon-scale-backend)
+- Routes are grouped under `MainLayout` where appropriate
+- SPA navigation is used for internal transitions
+- The product route accepts a placeholder `productId`
+- The wildcard route renders a custom 404 page
 
----
+## Components
 
-# ⚙️ Getting Started
+### Header
 
-## 1. Clone Repository
+The Header contains the top-level navigation shell and reusable actions such as Logo, Search Bar, Delivery, Language, Account, Orders, and Cart.
+
+### Footer
+
+The Footer provides supporting navigation, a back-to-top action, and a clean closing section for the application shell.
+
+### Search Bar
+
+The Search Bar is a branded search surface with category selection styling and SPA navigation behavior.
+
+### Hero
+
+The Hero section introduces the homepage with a strong banner, headline, and call-to-action structure.
+
+### Category Grid
+
+The Category Grid presents multiple category cards in a responsive, scan-friendly layout.
+
+### Product Card
+
+The Product Card displays reusable product information, pricing, ratings, badges, and navigation to product details.
+
+### Deals
+
+The Deals section highlights promotional offers and limited-time pricing.
+
+### Recommendations
+
+The Recommendations section shows curated product suggestions in a consistent card grid.
+
+## Screenshots
+
+> Placeholder section for future screenshots.
+
+### Home Page
+
+<!-- Add screenshot here -->
+
+### Products Page
+
+<!-- Add screenshot here -->
+
+### Cart
+
+<!-- Add screenshot here -->
+
+### Login
+
+<!-- Add screenshot here -->
+
+## Getting Started
+
+### Clone
 
 ```bash
 git clone https://github.com/Amitgupta0001/amazon-scale-frontend.git
-```
-
-## 2. Navigate to Project Directory
-
-```bash
 cd amazon-scale-frontend
 ```
 
-## 3. Install Dependencies
+### Install
 
 ```bash
 npm install
 ```
 
-## 4. Start Local Development Server
+### Run
 
 ```bash
 npm run dev
 ```
 
-## 5. Build for Production
+### Build
 
 ```bash
 npm run build
 ```
 
----
+## Scripts
 
-# 📌 Project Status Summary
+```bash
+npm run dev
+npm run build
+npm run preview
+```
 
-| Item | Status |
-|------|--------|
-| **Current Version** | `v0.3.0-dev` |
-| **Active Phase** | `Phase 2 (Completed)` ➔ `Phase 3 (Preparing)` |
-| **Header Suite** | ✅ 100% Completed |
-| **Home Page Suite** | ✅ 100% Completed |
-| **Footer Suite** | ✅ 100% Completed |
-| **Icons Integration** | ✅ Lucide React Integrated |
-| **Product Catalog Page** | ⏳ Planned for Phase 3 |
+- `npm run dev` starts the local development server
+- `npm run build` creates a production build
+- `npm run preview` previews the production build locally
 
----
+## Development Roadmap
 
-<div align="center">
+- [x] Phase 0 - Project Initialization
+- [x] Phase 1 - React + TypeScript + Vite Setup
+- [x] Phase 2 - Application Shell
+- [x] Phase 3 - Homepage
+- [x] Phase 4 - Routing
+- [ ] Phase 5 - Authentication
+- [ ] Phase 6 - Backend Integration
+- [ ] Phase 7 - Shopping Cart
+- [ ] Phase 8 - Checkout
+- [ ] Phase 9 - Testing
+- [ ] Phase 10 - Deployment
 
-### Building AmazonScale one feature at a time.
+## Future Improvements
 
-**Learn • Design • Build • Review • Repeat**
+- Product catalog data integration
+- Search results and filtering behavior
+- Authentication flows
+- User profile management
+- Wishlist and cart persistence
+- Order history and order detail views
+- API layer and data fetching strategy
+- Testing with Vitest and React Testing Library
+- CI/CD and deployment automation
+- Accessibility and performance audits
 
-</div>
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+**GitHub**: [Amit Kumar Gupta](https://github.com/Amitgupta0001)
+
+**LinkedIn**: [Amit Kumar Gupta](https://www.linkedin.com/in/amitgupta0001/)
+
+**Portfolio**: [Amit Kumar Gupta](https://amitgupta-resume.vercel.app/)
+
+**Email**: amitgupta001503@gmail.com

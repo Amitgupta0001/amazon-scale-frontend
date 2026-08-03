@@ -2,6 +2,8 @@
 
 # AmazonScale Frontend
 
+<img src="./src/assets/logos/logo.svg" alt="AmazonScale Logo" width="120" />
+
 Enterprise-grade e-commerce frontend inspired by modern large-scale shopping platforms.
 
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)

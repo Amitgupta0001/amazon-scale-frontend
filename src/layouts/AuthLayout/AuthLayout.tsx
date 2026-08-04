@@ -8,9 +8,9 @@ function AuthLayout() {
     return (
         <div className="auth-layout">
 
-            <header className="auth-layout__header">
+            <div className="auth-layout__brand">
                 <Logo />
-            </header>
+            </div>
 
             <main className="auth-layout__content">
                 <Outlet />

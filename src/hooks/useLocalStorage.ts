@@ -13,8 +13,7 @@ function useLocalStorage<T>(
             const item = window.localStorage.getItem(key);
 
             return item ? (JSON.parse(item) as T) : initialValue;
-        } catch (error) {
-            console.error(error);
+        } catch {
             return initialValue;
         }
     });
@@ -28,8 +27,8 @@ function useLocalStorage<T>(
             if (typeof window !== "undefined") {
                 window.localStorage.setItem(key, serializedValue);
             }
-        } catch (error) {
-            console.error(error);
+        } catch {
+            setStoredValue(value);
         }
     }, [key]);
 

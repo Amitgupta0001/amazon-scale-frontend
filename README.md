@@ -83,11 +83,14 @@ The project exists to practice and demonstrate modern frontend engineering in a 
 - Working 404 page
 - SPA navigation across primary routes
 - Professional placeholder pages for core sections
+ - Authentication UI: Login and Register pages with `AuthLayout`
+ - `AuthContext` skeleton and provider for authentication state
+ - Route guards: `ProtectedRoute` and `GuestRoute`
 
 ### In Progress
 
 - Product catalog data integration
-- Authentication screens and logic
+- Authentication backend integration and real auth flows (UI implemented, backend integration pending)
 - Cart, wishlist, and orders business behavior
 - Backend/API integration
 
@@ -348,7 +351,7 @@ npm run preview
 - [x] Phase 2 - Application Shell
 - [x] Phase 3 - Homepage
 - [x] Phase 4 - Routing
-- [ ] Phase 5 - Authentication
+- [ ] Phase 5 - Authentication — In progress (UI implemented; backend/auth integration pending)
 - [ ] Phase 6 - Backend Integration
 - [ ] Phase 7 - Shopping Cart
 - [ ] Phase 8 - Checkout

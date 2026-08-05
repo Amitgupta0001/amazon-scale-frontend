@@ -6,10 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 import PasswordInput from "../PasswordInput";
+import { ApiError } from "../../../services/api/apiClient";
 
 type LoginFormErrors = {
     email: string;
     password: string;
+    general?: string;
 };
 
 function LoginForm() {
@@ -25,6 +27,7 @@ function LoginForm() {
     const [errors, setErrors] = useState<LoginFormErrors>({
         email: "",
         password: "",
+        general: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -32,6 +35,7 @@ function LoginForm() {
         const validationErrors: LoginFormErrors = {
             email: "",
             password: "",
+            general: "",
         };
 
         let isValid = true;
@@ -46,9 +50,6 @@ function LoginForm() {
 
         if (!password.trim()) {
             validationErrors.password = "Password is required.";
-            isValid = false;
-        } else if (password.length < 8) {
-            validationErrors.password = "Password must be at least 8 characters.";
             isValid = false;
         }
 
@@ -65,6 +66,7 @@ function LoginForm() {
         }
 
         setIsSubmitting(true);
+        setErrors((prev) => ({ ...prev, general: "" }));
 
         try {
             await login({
@@ -73,6 +75,26 @@ function LoginForm() {
             });
 
             navigate("/", { replace: true });
+        } catch (err: unknown) {
+            if (err instanceof ApiError) {
+                if (err.validationErrors) {
+                    setErrors({
+                        email: err.validationErrors.email || "",
+                        password: err.validationErrors.password || "",
+                        general: "",
+                    });
+                } else {
+                    setErrors((prev) => ({
+                        ...prev,
+                        general: err.message || "Invalid credentials. Please try again.",
+                    }));
+                }
+            } else {
+                setErrors((prev) => ({
+                    ...prev,
+                    general: "An unexpected error occurred during login.",
+                }));
+            }
         } finally {
             setIsSubmitting(false);
         }
@@ -84,6 +106,12 @@ function LoginForm() {
             onSubmit={handleSubmit}
             noValidate
         >
+            {errors.general && (
+                <div className="login-form__error-banner" role="alert">
+                    {errors.general}
+                </div>
+            )}
+
             <div className="login-form__field">
                 <label
                     htmlFor="login-email"

@@ -1,16 +1,22 @@
 import {
     useCallback,
     useMemo,
+    useState,
+    useEffect,
     type ReactNode,
 } from "react";
 
-import useLocalStorage from "../../hooks/useLocalStorage";
+import authService from "../../services/auth/authService";
+import tokenService from "../../services/auth/tokenService";
+import profileService from "../../services/profile/profileService";
 
-import {
-    type AuthState,
-    type LoginCredentials,
-    type User,
+import type {
+    AuthState,
+    LoginCredentials,
+    RegisterCredentials,
+    User,
 } from "../../types/auth";
+import type { UserResponse } from "../../types/api";
 
 import {
     AuthContext,
@@ -22,47 +28,104 @@ type AuthProviderProps = {
 };
 
 function AuthProvider({ children }: AuthProviderProps) {
-    const [auth, setAuth] = useLocalStorage<AuthState>("auth", {
-        isAuthenticated: false,
-        user: null,
+    const [auth, setAuth] = useState<AuthState>(() => {
+        const token = tokenService.getToken();
+        const storedUser = profileService.getStoredProfile();
+
+        if (token && storedUser) {
+            return {
+                isAuthenticated: true,
+                user: storedUser,
+            };
+        } else if (token) {
+            const parsed = tokenService.parseJwt(token);
+            const userEmail = typeof parsed?.sub === "string" ? parsed.sub : "user@amazonscale.com";
+            const restoredUser: User = {
+                id: "1",
+                firstName: userEmail.split("@")[0] || "User",
+                lastName: "Account",
+                email: userEmail,
+                role: "CUSTOMER",
+            };
+            return {
+                isAuthenticated: true,
+                user: restoredUser,
+            };
+        }
+
+        return {
+            isAuthenticated: false,
+            user: null,
+        };
     });
+
+    useEffect(() => {
+        if (auth.user) {
+            profileService.setStoredProfile(auth.user);
+        } else {
+            profileService.clearStoredProfile();
+        }
+    }, [auth.user]);
 
     const login = useCallback(
         async (credentials: LoginCredentials): Promise<void> => {
-            // Mock login (will be replaced by Spring Boot API later)
-
-            const mockUser: User = {
-                id: typeof crypto.randomUUID === "function"
-                    ? crypto.randomUUID()
-                    : `${Date.now()}`,
-                firstName: "John",
-                lastName: "Doe",
+            const response = await authService.login({
                 email: credentials.email,
+                password: credentials.password,
+            });
+
+            const parsedJwt = response.accessToken ? tokenService.parseJwt(response.accessToken) : null;
+            const email = credentials.email;
+            const namePart = email.split("@")[0] || "User";
+
+            const user: User = {
+                id: parsedJwt?.userId ? String(parsedJwt.userId) : "1",
+                firstName: namePart,
+                lastName: "Account",
+                email: email,
                 role: "CUSTOMER",
             };
 
             setAuth({
                 isAuthenticated: true,
-                user: mockUser,
+                user: user,
             });
         },
-        [setAuth]
+        []
+    );
+
+    const register = useCallback(
+        async (credentials: RegisterCredentials): Promise<UserResponse> => {
+            const userResponse = await authService.register({
+                firstName: credentials.firstName,
+                lastName: credentials.lastName,
+                email: credentials.email,
+                password: credentials.password,
+                role: "CUSTOMER",
+            });
+
+            return userResponse;
+        },
+        []
     );
 
     const logout = useCallback(() => {
+        authService.logout();
+        profileService.clearStoredProfile();
         setAuth({
             isAuthenticated: false,
             user: null,
         });
-    }, [setAuth]);
+    }, []);
 
     const value = useMemo<AuthContextType>(
         () => ({
             auth,
             login,
+            register,
             logout,
         }),
-        [auth, login, logout]
+        [auth, login, register, logout]
     );
 
     return (

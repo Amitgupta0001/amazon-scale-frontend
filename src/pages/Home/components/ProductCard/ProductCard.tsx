@@ -1,6 +1,7 @@
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import { Star, ShoppingCart, Check } from "lucide-react";
+import { useState } from "react";
 
 export interface Product {
     id: string;
@@ -32,9 +33,11 @@ function ProductCard({ product, onAddToCart }: ProductCardProps) {
         reviewCount,
         badge,
         discountPercent,
+        imageUrl,
         inStock = true
     } = product;
     const productUrl = `/products/${product.id}`;
+    const [imageFailed, setImageFailed] = useState(false);
 
     return (
         <article className="product-card">
@@ -51,10 +54,20 @@ function ProductCard({ product, onAddToCart }: ProductCardProps) {
                         </span>
                     )}
 
-                    <div className="product-card__image-placeholder" aria-hidden="true">
-                        <span className="product-card__image-icon">📦</span>
-                        <span className="product-card__image-cat">{category}</span>
-                    </div>
+                    {imageUrl && !imageFailed ? (
+                        <img
+                            src={imageUrl}
+                            alt={name}
+                            className="product-card__image"
+                            style={{ width: "100%", height: "180px", objectFit: "contain" }}
+                            onError={() => setImageFailed(true)}
+                        />
+                    ) : (
+                        <div className="product-card__image-placeholder" aria-hidden="true">
+                            <span className="product-card__image-icon">📦</span>
+                            <span className="product-card__image-cat">{category}</span>
+                        </div>
+                    )}
                 </div>
             </Link>
 
@@ -99,7 +112,7 @@ function ProductCard({ product, onAddToCart }: ProductCardProps) {
 
                     {inStock ? (
                         <span className="product-card__stock">
-                            <Check size={12} /> Prime Delivery
+                            <Check size={12} /> In Stock
                         </span>
                     ) : (
                         <span className="product-card__stock product-card__stock--out">

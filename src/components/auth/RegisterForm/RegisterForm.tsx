@@ -3,7 +3,9 @@ import "./RegisterForm.css";
 import { useMemo, useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import useAuth from "../../../hooks/useAuth";
 import PasswordInput from "../PasswordInput";
+import { ApiError } from "../../../services/api/apiClient";
 
 type RegisterFormErrors = {
     firstName: string;
@@ -12,6 +14,7 @@ type RegisterFormErrors = {
     password: string;
     confirmPassword: string;
     terms: string;
+    general?: string;
 };
 
 type PasswordStrength = {
@@ -62,6 +65,7 @@ function getPasswordStrength(password: string): PasswordStrength {
 
 function RegisterForm() {
     const navigate = useNavigate();
+    const { register } = useAuth();
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -76,6 +80,7 @@ function RegisterForm() {
         password: "",
         confirmPassword: "",
         terms: "",
+        general: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -89,6 +94,7 @@ function RegisterForm() {
             password: "",
             confirmPassword: "",
             terms: "",
+            general: "",
         };
 
         let isValid = true;
@@ -145,9 +151,40 @@ function RegisterForm() {
         }
 
         setIsSubmitting(true);
+        setErrors((prev) => ({ ...prev, general: "" }));
 
         try {
+            await register({
+                firstName,
+                lastName,
+                email,
+                password,
+                confirmPassword,
+            });
+
             navigate("/login", { replace: true });
+        } catch (err: unknown) {
+            if (err instanceof ApiError) {
+                if (err.validationErrors) {
+                    setErrors((prev) => ({
+                        ...prev,
+                        firstName: err.validationErrors?.firstName || "",
+                        lastName: err.validationErrors?.lastName || "",
+                        email: err.validationErrors?.email || "",
+                        password: err.validationErrors?.password || "",
+                    }));
+                } else {
+                    setErrors((prev) => ({
+                        ...prev,
+                        general: err.message || "Registration failed. Email might already exist.",
+                    }));
+                }
+            } else {
+                setErrors((prev) => ({
+                    ...prev,
+                    general: "An unexpected error occurred during registration.",
+                }));
+            }
         } finally {
             setIsSubmitting(false);
         }
@@ -159,6 +196,12 @@ function RegisterForm() {
             onSubmit={handleSubmit}
             noValidate
         >
+            {errors.general && (
+                <div className="register-form__error-banner" role="alert">
+                    {errors.general}
+                </div>
+            )}
+
             <div className="register-form__grid">
                 <div className="register-form__field">
                     <label htmlFor="register-first-name" className="register-form__label">

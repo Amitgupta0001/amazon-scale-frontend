@@ -1,5 +1,8 @@
 import "./CategoryGrid.css";
+import { useEffect, useState } from "react";
 import CategoryCard from "../CategoryCard";
+import categoryService from "../../../../services/category/categoryService";
+import type { CategoryResponse } from "../../../../types/api";
 import {
     Tv,
     Shirt,
@@ -8,21 +11,63 @@ import {
     Gamepad2,
     BookOpen,
     Dumbbell,
-    ShoppingBag
+    ShoppingBag,
+    Package
 } from "lucide-react";
 
-const CATEGORIES = [
-    { id: "electronics", name: "Electronics", icon: Tv, itemCount: "10,000+ Items" },
-    { id: "fashion", name: "Fashion", icon: Shirt, itemCount: "25,000+ Items" },
-    { id: "home", name: "Home & Kitchen", icon: HomeIcon, itemCount: "15,000+ Items" },
-    { id: "beauty", name: "Beauty & Personal", icon: Sparkles, itemCount: "8,000+ Items" },
-    { id: "gaming", name: "Gaming", icon: Gamepad2, itemCount: "5,000+ Items" },
-    { id: "books", name: "Books & Media", icon: BookOpen, itemCount: "50,000+ Items" },
-    { id: "sports", name: "Sports & Outdoors", icon: Dumbbell, itemCount: "12,000+ Items" },
-    { id: "grocery", name: "Grocery & Gourmet", icon: ShoppingBag, itemCount: "18,000+ Items" },
-];
+const ICON_MAP: Record<string, typeof Tv> = {
+    electronics: Tv,
+    fashion: Shirt,
+    home: HomeIcon,
+    beauty: Sparkles,
+    gaming: Gamepad2,
+    books: BookOpen,
+    sports: Dumbbell,
+    grocery: ShoppingBag,
+};
 
 function CategoryGrid() {
+    const [categories, setCategories] = useState<CategoryResponse[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        let isMounted = true;
+        categoryService.getAllCategories()
+            .then((data) => {
+                if (isMounted) {
+                    setCategories(data);
+                }
+            })
+            .catch(() => {
+                // Graceful fallback if backend has no data or network issue
+            })
+            .finally(() => {
+                if (isMounted) setIsLoading(false);
+            });
+
+        return () => {
+            isMounted = false;
+        };
+    }, []);
+
+    const displayCategories = categories.length > 0
+        ? categories.map((cat) => ({
+            id: String(cat.id),
+            name: cat.name,
+            icon: ICON_MAP[cat.name.toLowerCase()] || Package,
+            itemCount: cat.description || "Category",
+        }))
+        : [
+            { id: "electronics", name: "Electronics", icon: Tv, itemCount: "Top Electronics" },
+            { id: "fashion", name: "Fashion", icon: Shirt, itemCount: "Trendy Outfits" },
+            { id: "home", name: "Home & Kitchen", icon: HomeIcon, itemCount: "Home Essentials" },
+            { id: "beauty", name: "Beauty & Personal", icon: Sparkles, itemCount: "Care Products" },
+            { id: "gaming", name: "Gaming", icon: Gamepad2, itemCount: "Gaming Gear" },
+            { id: "books", name: "Books & Media", icon: BookOpen, itemCount: "Reading List" },
+            { id: "sports", name: "Sports & Outdoors", icon: Dumbbell, itemCount: "Fitness Essentials" },
+            { id: "grocery", name: "Grocery & Gourmet", icon: ShoppingBag, itemCount: "Daily Supplies" },
+        ];
+
     return (
         <section className="category-grid-section" aria-labelledby="category-grid-heading">
             <div className="category-grid-section__header">
@@ -34,17 +79,23 @@ function CategoryGrid() {
                 </span>
             </div>
 
-            <div className="category-grid-section__grid">
-                {CATEGORIES.map((category) => (
-                    <CategoryCard
-                        key={category.id}
-                        id={category.id}
-                        name={category.name}
-                        icon={category.icon}
-                        itemCount={category.itemCount}
-                    />
-                ))}
-            </div>
+            {isLoading ? (
+                <div style={{ textAlign: "center", padding: "2rem", color: "var(--color-text-secondary, #666)" }}>
+                    Loading categories...
+                </div>
+            ) : (
+                <div className="category-grid-section__grid">
+                    {displayCategories.map((category) => (
+                        <CategoryCard
+                            key={category.id}
+                            id={category.id}
+                            name={category.name}
+                            icon={category.icon}
+                            itemCount={category.itemCount}
+                        />
+                    ))}
+                </div>
+            )}
         </section>
     );
 }

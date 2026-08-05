@@ -24,7 +24,6 @@ Enterprise-grade, full-stack connected e-commerce web application inspired by mo
 
 - [Overview](#overview)
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
 - [Folder Structure](#folder-structure)
@@ -39,7 +38,6 @@ Enterprise-grade, full-stack connected e-commerce web application inspired by mo
 - [Performance](#performance)
 - [Security](#security)
 - [Roadmap](#roadmap)
-- [Contributing](#contributing)
 - [License](#license)
 - [Author](#author)
 
@@ -85,36 +83,6 @@ Built with **React 19**, **TypeScript**, **Vite**, and **React Router**, the app
 ### Developer Experience & Standards
 - **Fast Build Times**: Powered by Vite and ESBuild (production build compiles in ~1.1s).
 - **Development Proxy**: Vite dev server proxies `/api` requests to Spring Boot on `http://localhost:8080`.
-
----
-
-## Screenshots
-
-> *UI Screenshots from Phase 6 Live Build*
-
-### Home Page
-![Home Page Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Home+Page+Live+Catalog)
-
-### Product Catalog
-![Products Page Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Product+Catalog)
-
-### Product Details
-![Product Details Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Product+Details)
-
-### Shopping Cart
-![Cart Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Shopping+Cart)
-
-### Wishlists
-![Wishlist Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+User+Wishlists)
-
-### Orders & Tracking
-![Orders Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Order+History)
-
-### Profile Overview
-![Profile Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+User+Profile)
-
-### Authentication (Login & Register)
-![Authentication Placeholder](https://via.placeholder.com/1200x600?text=AmazonScale+Authentication+Flow)
 
 ---
 
@@ -370,19 +338,6 @@ dist/
 - [ ] **Phase 10** – Production Cloud Deployment & CI/CD Pipeline
 
 ---
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
-
----
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for details.

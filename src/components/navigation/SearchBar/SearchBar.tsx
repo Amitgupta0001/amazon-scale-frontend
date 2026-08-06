@@ -61,12 +61,14 @@ function SearchBar() {
     const suggestionCount = useMemo(() => {
         if (!debouncedSearchTerm.trim()) return 0;
         const term = debouncedSearchTerm.trim().toLowerCase();
-        const catCount = categories.filter((c) => c.name.toLowerCase().includes(term)).slice(0, 3).length;
-        const prodCount = products.filter(
+        const safeCategories = Array.isArray(categories) ? categories : [];
+        const safeProducts = Array.isArray(products) ? products : [];
+        const catCount = safeCategories.filter((c) => c?.name?.toLowerCase().includes(term)).slice(0, 3).length;
+        const prodCount = safeProducts.filter(
             (p) =>
-                p.name.toLowerCase().includes(term) ||
-                p.brand.toLowerCase().includes(term) ||
-                p.description.toLowerCase().includes(term)
+                (p?.name && p.name.toLowerCase().includes(term)) ||
+                (p?.brand && p.brand.toLowerCase().includes(term)) ||
+                (p?.description && p.description.toLowerCase().includes(term))
         ).slice(0, 5).length;
         return 1 + catCount + prodCount; // 1 for direct search term option
     }, [debouncedSearchTerm, categories, products]);

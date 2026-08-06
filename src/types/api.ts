@@ -54,6 +54,37 @@ export interface ProductResponse {
     stock: number;
     brand: string;
     active: boolean;
+    originalPrice?: number;
+    discountPercentage?: number;
+    categoryId?: number;
+    categoryName?: string;
+    rating?: number;
+    reviewCount?: number;
+    sku?: string;
+    slug?: string;
+    status?: string;
+    featured?: boolean;
+    thumbnail?: string;
+    galleryImages?: string[];
+    createdAt?: string;
+    updatedAt?: string;
+}
+
+export interface SearchSuggestionResponse {
+    productNames: string[];
+    brands: string[];
+    categories: string[];
+}
+
+export interface PageResponse<T> {
+    content: T[];
+    page: number;
+    size: number;
+    totalElements: number;
+    totalPages: number;
+    first: boolean;
+    last: boolean;
+    numberOfElements: number;
 }
 
 export interface CreateCategoryRequest {

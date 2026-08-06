@@ -45,8 +45,8 @@ function Products() {
         ])
             .then(([productData, categoryData]) => {
                 if (isMounted) {
-                    setProducts(productData);
-                    setCategories(categoryData);
+                    setProducts(Array.isArray(productData) ? productData : []);
+                    setCategories(Array.isArray(categoryData) ? categoryData : []);
                     setIsLoading(false);
                 }
             })
@@ -71,8 +71,8 @@ function Products() {
             categoryService.getAllCategories(),
         ])
             .then(([productData, categoryData]) => {
-                setProducts(productData);
-                setCategories(categoryData);
+                setProducts(Array.isArray(productData) ? productData : []);
+                setCategories(Array.isArray(categoryData) ? categoryData : []);
             })
             .catch((err: unknown) => {
                 const msg = err instanceof Error ? err.message : "Failed to load shop catalog from backend server.";
@@ -85,7 +85,8 @@ function Products() {
 
     // Available brands extracted dynamically from products
     const availableBrands = useMemo(() => {
-        const brands = Array.from(new Set(products.map((p) => p.brand).filter(Boolean)));
+        const safeProducts = Array.isArray(products) ? products : [];
+        const brands = Array.from(new Set(safeProducts.map((p) => p.brand).filter(Boolean)));
         return brands.sort();
     }, [products]);
 
@@ -140,7 +141,8 @@ function Products() {
 
     // Filtered & Sorted products list computation
     const filteredProducts = useMemo(() => {
-        return products.filter((p) => {
+        const safeProducts = Array.isArray(products) ? products : [];
+        return safeProducts.filter((p) => {
             // Search Query Filter
             if (qParam.trim()) {
                 const term = qParam.trim().toLowerCase();

@@ -3,8 +3,12 @@ import type { CategoryResponse, CreateCategoryRequest, UpdateCategoryRequest } f
 
 export const categoryService = {
     async getAllCategories(): Promise<CategoryResponse[]> {
-        const response = await apiClient.get<CategoryResponse[]>("/categories");
-        return response.data;
+        try {
+            const response = await apiClient.get<CategoryResponse[]>("/categories");
+            return Array.isArray(response.data) ? response.data : [];
+        } catch {
+            return [];
+        }
     },
 
     async getCategoryById(id: number | string): Promise<CategoryResponse> {

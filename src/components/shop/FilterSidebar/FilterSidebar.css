@@ -1,0 +1,294 @@
+/* Desktop Sidebar */
+.filter-sidebar--desktop {
+    width: 260px;
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 1.25rem;
+    height: fit-content;
+    box-shadow: 0 2px 5px rgba(15, 17, 17, 0.04);
+}
+
+@media (max-width: 991px) {
+    .filter-sidebar--desktop {
+        display: none;
+    }
+}
+
+.filter-sidebar__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eaeded;
+}
+
+.filter-sidebar__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-sidebar__icon {
+    color: #0f1111;
+}
+
+.filter-sidebar__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f1111;
+    margin: 0;
+}
+
+.filter-sidebar__close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #565959;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-sidebar__close-btn:hover {
+    background-color: #f0f0f0;
+    color: #0f1111;
+}
+
+/* Category Filter List */
+.filter-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.filter-category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 0.6rem;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: #0f1111;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.filter-category-item:hover {
+    background-color: #f7f8f8;
+    color: #007185;
+}
+
+.filter-category-item--active {
+    font-weight: 700;
+    color: #c45500;
+    background-color: #fff8f5;
+}
+
+/* Brand Filter List */
+.filter-brand-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.filter-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #0f1111;
+    cursor: pointer;
+}
+
+.filter-checkbox-label input[type="radio"],
+.filter-checkbox-label input[type="checkbox"] {
+    accent-color: #e77600;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Price Presets & Form */
+.filter-price-presets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.filter-price-preset-btn {
+    background: transparent;
+    border: none;
+    font-size: 0.85rem;
+    color: #007185;
+    cursor: pointer;
+    text-align: left;
+    padding: 2px 0;
+    transition: color 0.15s ease;
+}
+
+.filter-price-preset-btn:hover {
+    color: #c45500;
+    text-decoration: underline;
+}
+
+.filter-price-form {
+    margin-top: 0.5rem;
+}
+
+.filter-price-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.filter-price-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d5d9d9;
+    border-radius: 4px;
+    padding: 0 0.4rem;
+    background: #ffffff;
+    flex: 1;
+    height: 32px;
+}
+
+.filter-price-field:focus-within {
+    border-color: #007185;
+    box-shadow: 0 0 0 2px rgba(0, 113, 133, 0.2);
+}
+
+.filter-price-symbol {
+    font-size: 0.8rem;
+    color: #565959;
+    margin-right: 2px;
+}
+
+.filter-price-field input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 0.85rem;
+    color: #0f1111;
+    background: transparent;
+}
+
+.filter-price-sep {
+    font-size: 0.75rem;
+    color: #565959;
+}
+
+.filter-price-go-btn {
+    height: 32px;
+    padding: 0 0.75rem;
+    background: #f0f2f2;
+    border: 1px solid #d5d9d9;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.filter-price-go-btn:hover {
+    background: #e3e6e6;
+}
+
+/* Footer & Buttons */
+.filter-sidebar__footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eaeded;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-sidebar__clear-all-btn {
+    width: 100%;
+    padding: 0.5rem;
+    background: transparent;
+    border: 1px solid #d5d9d9;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f1111;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-sidebar__clear-all-btn:hover {
+    background-color: #f7f8f8;
+    border-color: #565959;
+}
+
+.filter-sidebar__apply-btn {
+    width: 100%;
+    padding: 0.65rem;
+    background: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f1111;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-sidebar__apply-btn:hover {
+    background: #f7ca00;
+}
+
+/* Mobile Drawer Overlay & Container */
+.filter-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    justify-content: flex-start;
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.2s ease-out;
+}
+
+.filter-drawer-container {
+    width: 85%;
+    max-width: 320px;
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    padding: 1.25rem;
+    animation: slideInLeft 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

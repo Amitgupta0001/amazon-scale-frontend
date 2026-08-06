@@ -6,9 +6,9 @@
     max-width: 760px;
     background-color: #ffffff;
     border-radius: 6px;
-    overflow: hidden;
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
     border: 2px solid transparent;
+    position: relative;
 }
 
 .search-bar:focus-within {
@@ -18,7 +18,7 @@
 
 .search-bar__category {
     height: 100%;
-    width: 90px;
+    width: 120px;
     border: none;
     border-right: 1px solid #dddddd;
     outline: none;
@@ -29,6 +29,9 @@
     color: #333333;
     font-weight: 500;
     transition: background-color 0.2s ease;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .search-bar__category:hover {
@@ -39,12 +42,20 @@
     background-color: #e6e6e6;
 }
 
-.search-bar__input {
+.search-bar__input-wrapper {
     flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar__input {
+    width: 100%;
     height: 100%;
     border: none;
     outline: none;
-    padding: 0 14px;
+    padding: 0 32px 0 14px;
     font-size: 14px;
     color: #111111;
     background: transparent;
@@ -53,6 +64,33 @@
 .search-bar__input::placeholder {
     color: #767676;
     font-size: 14px;
+}
+
+/* Remove default webkit search clear icon */
+.search-bar__input::-webkit-search-cancel-button,
+.search-bar__input::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search-bar__clear-btn {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #767676;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.search-bar__clear-btn:hover {
+    color: #111111;
+    background-color: #f0f0f0;
 }
 
 .search-bar__button {
@@ -66,6 +104,7 @@
     cursor: pointer;
     transition: background-color 0.2s ease;
     padding: 0;
+    flex-shrink: 0;
 }
 
 .search-bar__button:hover {
